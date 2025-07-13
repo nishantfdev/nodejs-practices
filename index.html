@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #fceabb, #f8b500);
+        text-align: center;
+        padding-top: 50px;
+      }
+      h1 {
+        color: #444;
+      }
+      .form-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-content: center;
+        margin-top: 40px;
+      }
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      input[type="number"],
+      input[type="submit"] {
+        padding: 10px;
+        margin: 8px;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background-color: #f8b500;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #c49000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arithmetic Operations</h1>
+    <div class="form-container">
+      <form action="/add" method="post">
+        <input
+          type="number"
+          name="num1"
+          placeholder="Number 1"
+          required
+          step="any"
+        />
+        <input
+          type="number"
+          name="num2"
+          placeholder="Number 2"
+          required
+          step="any"
+        />
+        <input type="submit" value="Add" />
+      </form>
+      <form action="/sub" method="post">
+        <input type="number" name="num1" placeholder="Number 1" required />
+        <input type="number" name="num2" placeholder="Number 2" required />
+        <input type="submit" value="Subtract" />
+      </form>
+      <form action="/mul" method="post">
+        <input type="number" name="num1" placeholder="Number 1" required />
+        <input type="number" name="num2" placeholder="Number 2" required />
+        <input type="submit" value="Multiply" />
+      </form>
+      <form action="/div" method="post">
+        <input type="number" name="num1" placeholder="Number 1" required />
+        <input type="number" name="num2" placeholder="Number 2" required />
+        <input type="submit" value="Divide" />
+      </form>
+    </div>
+  </body>
+</html>
