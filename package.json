@@ -1,0 +1,17 @@
+{
+    "name": "my-node-app",
+    "version": "1.0.0",
+    "description": "A basic Node.js project for Render cloud platform",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node --watch index.js",
+        "start": "node index.js"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "keywords": [],
+    "author": "Nishant",
+    "license": "MIT"
+    
+}
