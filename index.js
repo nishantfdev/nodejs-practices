@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
 
     // The second argument is a callback function that will be called once the file has been read. This function receives two parameters: err and data. If an error occurs (for example, if the file does not exist), err will contain error information; otherwise, data will contain the contents of the file as a Buffer object.
 
-    fs.readFile(path.join(__dirname, "public/index.html"), (err, data) => {
+    fs.readFile(path.join(__dirname, "public", "index.html"), (err, data) => {
       if (err) {
         //   Sets response headers and status code
         res.writeHead(500, { "Content-Type": "text/plain" });
