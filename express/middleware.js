@@ -13,20 +13,20 @@ function getProductsData() {
   return JSON.parse(rawData);
 }
 
-// app.use((req, res, next) => {
-//   console.log("from middleware", req.url);
-//   // return res.json({ msg: "middleware called" });
-//   // res.json({ msg: "response sent from middleware." });
-//   // console.log("middleware called.");
-//   next();
-// });
-// app.use((req, res, next) => {
-//   console.log("from middleware 2");
-//   // return res.json({ msg: "middleware called" });
-//   // res.json({ msg: "response sent from middleware." });
-//   // console.log("middleware called.");
-//   next();
-// });
+app.use((req, res, next) => {
+  console.log("from middleware", req.url);
+  // return res.json({ msg: "middleware called" });
+  // res.json({ msg: "response sent from middleware." });
+  // console.log("middleware called.");
+  next();
+});
+app.use((req, res, next) => {
+  console.log("from middleware 2");
+  // return res.json({ msg: "middleware called" });
+  // res.json({ msg: "response sent from middleware." });
+  // console.log("middleware called.");
+  next();
+});
 
 // // Get all products
 // app.get("/products", (req, res) => {
