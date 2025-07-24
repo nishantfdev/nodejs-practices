@@ -10,13 +10,14 @@ const PORT = 3000;
 
 // The 'extended: true' option allows for rich objects and arrays to be encoded.
 app.use(express.urlencoded({ extended: true }));
+// application/x-www-form-urlencoded
 
 // This middleware parses incoming requests with JSON payloads.
 // Useful if you're also building an API that accepts JSON.
 app.use(express.json());
 
 // Middleware to serve static files (like our index.html)
-app.use(express.static(path.join(__dirname)));
+// app.use(express.static(path.join(__dirname)));
 
 // Route to serve the HTML form
 app.get("/", (req, res) => {
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 // Route to handle the form submission
 app.post("/submit-form", (req, res) => {
   // The parsed form data is available in the `req.body` object.
+  console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
 

@@ -1,5 +1,0 @@
-{
-  "title": "My blog sample",
-  "content": "Try uploading a large image file (over 2MB) at http://localhost:3000/ and you'll see the size limit error message. Upload a small image file and it should work properly.These practical examples show you how to control what gets uploaded to your server, making your application more secure and efficient.",
-  "imagePath": "uploads\\image-1753116866071.jpeg"
-}
