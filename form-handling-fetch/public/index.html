@@ -1,0 +1,28 @@
+<!-- public/index.html -->
+<form id="myForm">
+  <input type="text" name="username" placeholder="Enter name" />
+  <input type="email" name="email" placeholder="Enter email" />
+  <button type="submit">Submit</button>
+</form>
+
+<div id="output"></div>
+<script>
+  document.getElementById("myForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // The FormData constructor automatically gathers all the input fields and their current values from the form.
+    const formData = new FormData(e.target);
+
+    //converting formData object to plain JS object
+    const data = Object.fromEntries(formData.entries());
+
+    const response = await fetch("/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.text();
+    // alert(result);
+    document.getElementById("output").innerHTML = result;
+  });
+</script>
