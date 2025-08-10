@@ -1,0 +1,7 @@
+[
+  { "title": "Inception", "genre": "Sci-Fi", "year": 2012 },
+  { "title": "The Godfather", "genre": "Crime", "year": [1972, 1978] },
+  { "title": "Interstellar", "genre": "Sci-Fi", "year": [2014, 2018] },
+  { "title": "Parasite", "genre": "Thriller", "year": [2019,2010] },
+  { "title": "Arrival", "genre": "Sci-Fi", "year": [2016,2010] }
+]
