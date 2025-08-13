@@ -35,7 +35,7 @@ app.use(
 
 // Middleware: ensure user is logged in
 function ensureAuthenticated(req, res, next) {
-  console.log(req.session.userId);
+  // console.log(req.session.userId);
   if (req.session.userId) {
     return next();
   }
@@ -50,6 +50,15 @@ function ensureAdmin(req, res, next) {
   }
   res.status(403).send("Access denied: Admins only");
 }
+
+// Home page - redirect to login if not authenticated
+app.get("/", (req, res) => {
+  if (req.session.userId) {
+    res.redirect("/dashboard");
+  } else {
+    res.redirect("/login");
+  }
+});
 
 // Render login form
 app.get("/login", (req, res) => {
