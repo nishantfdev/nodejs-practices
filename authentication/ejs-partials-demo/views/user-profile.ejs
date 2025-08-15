@@ -1,0 +1,16 @@
+<%- include('partials/header', { title: title, site: site }) %> <%-
+include('partials/navigation', { currentPage: currentPage, user: user }) %>
+
+<main>
+  <h2><%= user.name %>'s Profile</h2>
+
+  <%- include('partials/user-card', { user: user }) %>
+
+  <h3>Additional Information</h3>
+  <p>
+    This profile page demonstrates how to pass specific user data to partials.
+  </p>
+  <p>User joined on: <%= new Date().toLocaleDateString() %></p>
+</main>
+
+<%- include('partials/footer', { site: site, users: [] }) %>

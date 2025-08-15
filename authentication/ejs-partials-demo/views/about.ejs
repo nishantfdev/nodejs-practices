@@ -1,0 +1,28 @@
+<%- include('partials/header', { title: title, site: site }) %> <%-
+include('partials/navigation', { currentPage: currentPage, user: null }) %>
+
+<main>
+  <h2>About <%= site.title %></h2>
+  <p>This is a demonstration of using EJS partials with data in Node.js.</p>
+
+  <h3>Features Demonstrated:</h3>
+  <ul>
+    <li>Header partial with dynamic title and site data</li>
+    <li>Navigation partial with active page highlighting</li>
+    <li>User card partial for reusable user display</li>
+    <li>Footer partial with dynamic content</li>
+    <li>Data passing between main templates and partials</li>
+  </ul>
+
+  <h3>How Partials Work:</h3>
+  <p>
+    EJS partials allow you to break your templates into reusable components. You
+    can pass data to partials using the second parameter of the include
+    function:
+  </p>
+  <pre>
+&lt;%- include('partials/header', { title: title, site: site }) %&gt;</pre
+  >
+</main>
+
+<%- include('partials/footer', { site: site, users: [] }) %>

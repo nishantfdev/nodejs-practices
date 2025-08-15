@@ -1,0 +1,15 @@
+<%- include('partials/header', { title: title, site: site }) %> <%-
+include('partials/navigation', { currentPage: currentPage, user: null }) %>
+
+<main>
+  <h2>Welcome to <%= site.title %></h2>
+  <p>This is the home page showcasing EJS partials with data.</p>
+
+  <h3>Our Users</h3>
+  <div class="user-list">
+    <% users.forEach(function(user) { %> <%- include('partials/user-card', {
+    user: user }) %> <% }); %>
+  </div>
+</main>
+
+<%- include('partials/footer', { site: site, users: users }) %>

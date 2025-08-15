@@ -1,0 +1,13 @@
+<nav>
+  <a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a>
+  <a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>"
+    >About</a
+  >
+  <% if (typeof user !== 'undefined' && user) { %>
+  <a
+    href="/user/<%= user.id %>"
+    class="<%= currentPage === 'profile' ? 'active' : '' %>"
+    >Profile</a
+  >
+  <% } %>
+</nav>
