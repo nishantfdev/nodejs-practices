@@ -96,12 +96,14 @@ if (!fs.existsSync(dir)) {
 
 const fileFilter = (req, file, cb) => {
   // Accept only specific mime types
-  const allowedTypes = ["image/png", "image/gif"];
-  // const allowedTypes = [
-  //   "application/pdf",
-  //   "application/msword", // .doc
-  //   "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
-  // ];
+  // const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+
+  ///////////////allows different file types Image/PDF/DOC/DOCX:
+  const allowedTypes = [
+    "application/pdf",
+    "application/msword", // .doc
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
+  ];
 
   if (allowedTypes.includes(file.mimetype)) {
     cb(null, true); // Accept the file
@@ -109,6 +111,8 @@ const fileFilter = (req, file, cb) => {
     cb(new Error("Unsupported file format"), false); // Reject the file
   }
 };
+
+// ----------------------Multer Cofiguration
 
 const upload = multer({
   storage: multer.diskStorage({
