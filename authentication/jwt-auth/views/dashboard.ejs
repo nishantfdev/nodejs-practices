@@ -1,0 +1,81 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Dashboard</h1>
+    <form method="POST" action="/logout" style="display: inline">
+      <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+  </div>
+
+  <div class="user-info">
+    <h3>Welcome back, <%= user.name %>! 👋</h3>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Member since:</strong> <%= user.memberSince %></p>
+    <p><strong>Last login:</strong> <%= user.lastLogin %></p>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <span class="stat-number"><%= user.loginCount %></span>
+      <div class="stat-label">Total Logins</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number"><%= user.daysActive %></span>
+      <div class="stat-label">Days Active</div>
+    </div>
+  </div>
+
+  <!-- Additional dashboard content -->
+  <div
+    style="
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+    "
+  >
+    <h4 style="color: #333; margin-bottom: 15px">Quick Actions</h4>
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      "
+    >
+      <a
+        href="#"
+        class="btn"
+        style="text-decoration: none; width: 100%; margin: 0"
+      >
+        View Profile Settings
+      </a>
+      <a
+        href="#"
+        class="btn btn-secondary"
+        style="
+          text-decoration: none;
+          width: 100%;
+          margin: 0;
+          background: #28a745;
+        "
+      >
+        Download Data
+      </a>
+    </div>
+  </div>
+
+  <!-- System info -->
+  <div
+    style="
+      margin-top: 20px;
+      padding: 15px;
+      background: #e8f4fd;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    "
+  >
+    🔒 Your session is secure and will expire in 24 hours
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="auth-container">
+  <h1>Create Account</h1>
+
+  <% if (error) { %>
+  <div class="alert alert-error"><%= error %></div>
+  <% } %> <% if (success) { %>
+  <div class="alert alert-success"><%= success %></div>
+  <% } %>
+
+  <form method="POST" action="/signup">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="6"
+      />
+      <small style="color: #666; font-size: 0.9rem">Minimum 6 characters</small>
+    </div>
+
+    <button type="submit" class="btn">Create Account</button>
+  </form>
+
+  <div style="text-align: center; margin-top: 20px">
+    <a href="/login" class="switch-link">Already have an account? Sign in</a>
+  </div>
+</div>
