@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paginated Items</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      .pagination a {
+        margin: 0 5px;
+        text-decoration: none;
+      }
+      .active {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Items (Page <%= currentPage %> of <%= totalPages %>)</h1>
+    <ul>
+      <% items.forEach(item => { %>
+      <li><%= item.name %></li>
+      <% }) %>
+    </ul>
+
+    <div class="pagination">
+      <% for(let i = 1; i <= totalPages; i++) { %> <% if(i === currentPage) { %>
+      <span class="active"><%= i %></span>
+      <% } else { %>
+      <a href="/items?page=<%= i %>"><%= i %></a>
+      <% } %> <% } %>
+    </div>
+  </body>
+</html>

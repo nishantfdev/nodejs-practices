@@ -12,6 +12,8 @@
     },
     "keywords": [],
     "author": "Nishant",
-    "license": "MIT"
-    
+    "license": "MIT",
+    "dependencies": {
+        "multer": "^2.0.2"
+    }
 }

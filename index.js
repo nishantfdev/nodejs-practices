@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
   } else if (req.method === "POST") {
     let body = "";
     // This line listens for the "data" event on the req (request) object, which is triggered whenever a new chunk of data is received from the client. In Node.js, incoming POST request data is sent in small pieces called "chunks," especially for larger payloads.
-    req.on("data", (chunk) => (body += chunk));
+    req.on("data", (chunk) => (body += chunk.toString()));
 
     // Once all data has been received, the "end" event will fire, signaling that the request body is complete and ready to be processed.
     req.on("end", () => {

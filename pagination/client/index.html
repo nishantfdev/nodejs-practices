@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pagination Example</title>
+  </head>
+  <body>
+    <h1>Paginated Items</h1>
+    <ul id="item-list"></ul>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+
+    <script>
+      let currentPage = 1;
+      const limit = 10;
+      // loadPage() responsible for fetching data from the API endpoint, which expects page and limit as query parameters
+      async function loadPage(page) {
+        const res = await fetch(
+          `http://localhost:3000/items?page=${page}&limit=${limit}`
+        );
+        const result = await res.json();
+        console.log(data);
+        const list = document.getElementById("item-list");
+        list.innerHTML = "";
+        result.data.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.id}: ${item.name}`;
+          list.appendChild(li);
+        });
+
+        // Enable/disable buttons
+        document.getElementById("prev").disabled = page <= 1;
+        document.getElementById("next").disabled = page >= data.totalPages;
+
+        currentPage = page;
+      }
+
+      document
+        .getElementById("prev")
+        .addEventListener("click", () => loadPage(currentPage - 1));
+      document
+        .getElementById("next")
+        .addEventListener("click", () => loadPage(currentPage + 1));
+
+      // Load first page
+      loadPage(1);
+    </script>
+  </body>
+</html>
