@@ -1,0 +1,20 @@
+<h1>🛍️ Product List</h1>
+<a href="/add">Add New Product</a>
+<ul>
+  <% products.forEach(p => { %>
+  <li>
+    <p><%=p._id%></p>
+    <h2><%= p.name %> - ₹<%= p.price %></h2>
+    <img src="<%= p.image %>" alt="<%= p.name %>" width="200" /><br />
+    <a href="/product/<%= p._id %>">View</a>
+    <a href="/edit/<%= p._id %>">Edit</a>
+    <form
+      action="/delete/<%= p._id %>?_method=DELETE"
+      method="POST"
+      style="display: inline"
+    >
+      <button type="submit">Delete</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>
