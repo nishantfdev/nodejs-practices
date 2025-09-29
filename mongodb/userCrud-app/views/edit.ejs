@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update User</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <h2>Update User</h2>
+    <form action="/update" method="POST">
+      <label>Email of user to update:</label><br />
+      <input type="email" name="email" required /><br /><br />
+
+      <label>New Name:</label><br />
+      <input type="text" name="name" /><br /><br />
+
+      <label>New Password:</label><br />
+      <input type="password" name="password" /><br /><br />
+
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
