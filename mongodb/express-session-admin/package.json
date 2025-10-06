@@ -1,0 +1,19 @@
+{
+  "name": "express-session-admin",
+  "version": "1.0.0",
+  "description": "Role-Based Concurrent Session Management with Admin Panel",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongoose": "^8.19.0"
+  }
+}

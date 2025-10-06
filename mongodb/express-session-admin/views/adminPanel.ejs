@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel - Active Sessions</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Active Sessions</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Login Time</th>
+          <th>Expires At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% sessions.forEach(session => { %>
+        <tr>
+          <td><%= session.username %></td>
+          <td><%= session.loginTime.toLocaleString() %></td>
+          <td><%= session.expiresAt.toLocaleString() %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
