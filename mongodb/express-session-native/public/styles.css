@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  background: #f0f0f0;
+}
+input,
+button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+.error {
+  color: red;
+}
